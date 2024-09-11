@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Registro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand {
+            color: #fff;
+        }
+        .navbar-brand:hover {
+            color: #e2e6ea;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        .footer {
+                background-color: #003d7a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+
+        }
+        .footer a {
+            color: #fff;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #007bb5;">
+    <a class="navbar-brand" th:href="@{/informacion}" style="color: white;">BBVA</a>
+</nav>
+
+
+<div class="container mt-5 mb-auto">
+    <div class="form-container bg-white p-4 rounded shadow-sm">
+        <h1 class="text-center mb-4">Formulario de Registro</h1>
+        <form th:action="@{/formularios}" th:object="${formulario}" method="post">
+            <div class="form-group mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" th:field="*{nombre}" class="form-control" placeholder="Introduce tu nombre" required aria-describedby="nombreError"/>
+                <div id="nombreError" class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" th:field="*{apellido}" class="form-control" placeholder="Introduce tu apellido" required aria-describedby="apellidoError"/>
+                <div id="apellidoError" class="text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="cedula">Cédula</label>
+                <input type="text" id="cedula" th:field="*{cedula}" class="form-control" placeholder="Introduce tu cédula" required aria-describedby="cedulaError"/>
+                <div id="cedulaError" class="text-danger" th:if="${#fields.hasErrors('cedula')}" th:errors="*{cedula}"></div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="numeroCuenta">Número de Cuenta</label>
+                <input type="text" id="numeroCuenta" th:field="*{numeroCuenta}" class="form-control" placeholder="Introduce tu número de cuenta" required aria-describedby="numeroCuentaError"/>
+                <div id="numeroCuentaError" class="text-danger" th:if="${#fields.hasErrors('numeroCuenta')}" th:errors="*{numeroCuenta}"></div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="correoElectronico">Correo Electrónico</label>
+                <input type="email" id="correoElectronico" th:field="*{correoElectronico}" class="form-control" placeholder="Introduce tu correo electrónico" required aria-describedby="correoElectronicoError"/>
+                <div id="correoElectronicoError" class="text-danger" th:if="${#fields.hasErrors('correoElectronico')}" th:errors="*{correoElectronico}"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #007bb5; ;" >Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+<footer class="footer" style="background-color: #007bb5; color: white; padding: 20px; text-align: center;">
+    <p>&copy; 2024 Banco del Pacífico. Todos los derechos reservados.</p>
+    <p><a href="#" style="color: white; text-decoration: none;">Política de Privacidad</a> | <a href="#" style="color: white; text-decoration: none;">Términos de Servicio</a></p>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

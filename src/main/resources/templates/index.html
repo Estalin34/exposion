@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio |BBVA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/CssInicio/index.css" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+
+<body class="bg-gray-100 text-gray-800 fade-in">
+
+<!-- Navbar -->
+<header class="bg-[#007bb5] text-white shadow-lg">
+    <div class="container mx-auto p-5 flex justify-between items-center">
+        <div class="flex items-center">
+            <h1 class="text-2xl font-bold">BBVA</h1>
+        </div>
+        <nav>
+            <a href="/login" class="bg-white text-blue-700 px-4 py-2 rounded-md hover:bg-gray-200 mx-2">Iniciar Sesión</a>
+
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative bg-cover bg-center parallax h-96" style="background-image: url('https://www.bancodelpacifico.com/BancoPacifico/media/Personas/CanalesAtencion/canales-BancaVirtualIntermatico.jpg?ext=.jpg');">
+    <div class="absolute inset-0 overlay flex flex-col items-center justify-center text-white text-center">
+        <h2 class="text-4xl font-semibold mb-3">Tu confianza, nuestro compromiso</h2>
+        <p class="text-lg mb-6">Con BBVA , tus finanzas están en buenas manos.</p>
+        <a href="/registrar" class="bg-[#007bb5] text-white px-6 py-3 rounded-md hover:bg-blue-600">Abre una cuenta hoy</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="bg-blue-100 py-12 mt-12">
+    <div class="container mx-auto text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-8">Nuestros Servicios</h3>
+        <div class="flex flex-wrap justify-center">
+            <!-- Cuentas de Ahorro -->
+            <div class="w-full md:w-1/3 p-4">
+                <div class="flip-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col justify-between">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col justify-between h-full">
+                            <div>
+                                <img src="https://blog.globalcaja.es/wp-content/uploads/2019/03/elegir-cuenta-bancaria-768x480.jpg" alt="Cuentas de Ahorro" class="h-48 w-full object-cover rounded-lg mb-4">
+                                <h4 class="text-2xl font-semibold text-blue-700 mb-4">Cuentas de Ahorro</h4>
+                                <p class="text-gray-600 mb-4">Administre su dinero con nuestras cuentas de ahorro seguras y flexibles.</p>
+                            </div>
+                            <a href="/cuentas-ahorro" class="text-blue-700 hover:underline">Más información</a>
+                        </div>
+                        <div class="flip-card-back p-4 flex flex-col justify-between h-full">
+                            <h5 class="text-xl font-semibold text-blue-700 mb-2">Características:</h5>
+                            <ul class="text-gray-600 text-left list-disc list-inside">
+                                <li>Tasas de interés competitivas.</li>
+                                <li>Acceso en línea las 24 horas.</li>
+                                <li>Transferencias gratuitas entre cuentas BBVA.</li>
+                                <li>Sin cargos por mantenimiento con un saldo mínimo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Préstamos Personales -->
+            <div class="w-full md:w-1/3 p-4">
+                <div class="flip-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col justify-between">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col justify-between h-full">
+                            <div>
+                                <img src="https://th.bing.com/th/id/OIP.ioAeYi0zdMPI3Rd5LVSl-AHaE8?rs=1&pid=ImgDetMain" alt="Préstamos Personales" class="h-48 w-full object-cover rounded-lg mb-4">
+                                <h4 class="text-2xl font-semibold text-blue-700 mb-4">Préstamos Personales</h4>
+                                <p class="text-gray-600 mb-4">Ofrecemos préstamos con tasas competitivas y condiciones justas.</p>
+                            </div>
+                            <a href="/prestamos-personales" class="text-blue-700 hover:underline">Más información</a>
+                        </div>
+                        <div class="flip-card-back p-4 flex flex-col justify-between h-full">
+                            <h5 class="text-xl font-semibold text-blue-700 mb-2">Beneficios:</h5>
+                            <ul class="text-gray-600 text-left list-disc list-inside">
+                                <li>Aprobación rápida y sencilla.</li>
+                                <li>Flexibilidad en los plazos de pago.</li>
+                                <li>Asesoría personalizada.</li>
+                                <li>Sin cargos ocultos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas de Crédito -->
+            <div class="w-full md:w-1/3 p-4">
+                <div class="flip-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col justify-between">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col justify-between h-full">
+                            <div>
+                                <img src="https://th.bing.com/th/id/OIP.MIG-N-C0Gu4kenrFlxyC9wHaEc?rs=1&pid=ImgDetMain" alt="Tarjetas de Crédito" class="h-48 w-full object-cover rounded-lg mb-4">
+                                <h4 class="text-2xl font-semibold text-blue-700 mb-4">Tarjetas de Crédito</h4>
+                                <p class="text-gray-600 mb-4">Disfrute de beneficios exclusivos con nuestras tarjetas de crédito.</p>
+                            </div>
+                            <a href="/tarjetas-credito" class="text-blue-700 hover:underline">Más información</a>
+                        </div>
+                        <div class="flip-card-back p-4 flex flex-col justify-between h-full">
+                            <h5 class="text-xl font-semibold text-blue-700 mb-2">Ventajas:</h5>
+                            <ul class="text-gray-600 text-left list-disc list-inside">
+                                <li>Recompensas por cada compra.</li>
+                                <li>Tasas de interés competitivas.</li>
+                                <li>Protección contra fraudes.</li>
+                                <li>Acceso a promociones exclusivas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="bg-gray-100 py-16 mt-56">
+    <div class="container mx-auto text-center">
+        <h3 class="text-4xl font-bold text-gray-800 mb-12">Lo que dicen nuestros clientes</h3>
+        <div class="flex flex-wrap justify-center gap-8">
+            <!-- Testimonio 1 -->
+            <div class="w-full md:w-1/3 p-4">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <p class="text-gray-600 italic leading-relaxed mb-6">"Excelente servicio y atención personalizada. Recomendado al 100%!"</p>
+                    <h4 class="text-blue-700 font-semibold text-xl">- Juan Pérez</h4>
+                </div>
+            </div>
+            <!-- Testimonio 2 -->
+            <div class="w-full md:w-1/3 p-4">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <p class="text-gray-600 italic leading-relaxed mb-6">"Rápido y confiable, siempre puedo contar con ellos para mis necesidades financieras."</p>
+                    <h4 class="text-blue-700 font-semibold text-xl">- María López</h4>
+                </div>
+            </div>
+            <!-- Testimonio 3 -->
+            <div class="w-full md:w-1/3 p-4">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <p class="text-gray-600 italic leading-relaxed mb-6">"BBVA ha hecho que manejar mis finanzas sea más fácil que nunca."</p>
+                    <h4 class="text-blue-700 font-semibold text-xl">- Carlos García</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-[#007bb5] text-white py-12">
+    <div class="container mx-auto px-8">
+        <div class="flex flex-wrap justify-between">
+            <!-- Sobre Nosotros -->
+            <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                <h4 class="text-2xl font-semibold mb-4">Sobre Nosotros</h4>
+                <p class="text-gray-200 leading-relaxed">En BBVA, nos comprometemos a brindar servicios financieros de calidad para ayudar a nuestros clientes a alcanzar sus metas.</p>
+            </div>
+
+            <!-- Enlaces Rápidos -->
+            <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                <h4 class="text-2xl font-semibold mb-4">Enlaces Rápidos</h4>
+                <ul class="space-y-4">
+                    <li><a href="/login" class="hover:underline text-[#f5f5f5] transition-colors duration-300">Iniciar Sesión</a></li>
+                    <li><a href="/registrar" class="hover:underline text-[#f5f5f5] transition-colors duration-300">Regístrate</a></li>
+                </ul>
+            </div>
+
+            <!-- Síguenos -->
+            <div class="w-full md:w-1/3">
+                <h4 class="text-2xl font-semibold mb-4">Síguenos</h4>
+                <p class="text-gray-200 leading-relaxed">Síguenos en nuestras redes sociales para estar al tanto de las últimas noticias y ofertas.</p>
+                <div class="flex space-x-6 mt-6">
+                    <a href="https://www.facebook.com/tuPaginaFacebook" target="_blank" class="text-gray-300 hover:text-white transition-transform duration-300 transform hover:scale-110" aria-label="Facebook">
+                        <i class="fab fa-facebook-f text-3xl"></i>
+                    </a>
+                    <a href="https://twitter.com/tuPaginaTwitter" target="_blank" class="text-gray-300 hover:text-white transition-transform duration-300 transform hover:scale-110" aria-label="Twitter">
+                        <i class="fab fa-twitter text-3xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tuPaginaInstagram" target="_blank" class="text-gray-300 hover:text-white transition-transform duration-300 transform hover:scale-110" aria-label="Instagram">
+                        <i class="fab fa-instagram text-3xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tuPerfilLinkedIn" target="_blank" class="text-gray-300 hover:text-white transition-transform duration-300 transform hover:scale-110" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-3xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-gray-300 mt-12 border-t border-gray-400 pt-6">
+            <p>&copy; 2024 BBVA. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+
+</html>

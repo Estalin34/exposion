@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cuentas</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="/Servicios/cuenta.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/admin/dashboard">
+        <button class="btn btn-primary"  style="background-color: #007bb5; color: white;">Panel</button>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <!-- Agrega aquí los enlaces de navegación si los necesitas -->
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h1>Lista de Cuentas</h1>
+
+    <!-- Botón para agregar una nueva cuenta -->
+    <div class="text-center mb-4">
+        <a class="btn btn-primary" th:href="@{/cuentas/nueva}" style="background-color: #007bb5; color: white;">
+            <i class="fas fa-plus"></i> Agregar Nueva Cuenta
+        </a>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Número de Cuenta</th>
+            <th>Saldo</th>
+            <th>Cliente</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cuenta : ${cuentas}">
+            <td th:text="${cuenta.numeroCuenta}">Número de Cuenta</td>
+            <td th:text="${cuenta.saldo}">Saldo</td>
+            <td th:text="${cuenta.cliente != null ? cuenta.cliente.nombre + ' ' + cuenta.cliente.apellido : 'N/A'}">Cliente</td>
+            <td class="actions">
+                <a class="btn btn-warning btn-sm" th:href="@{/cuentas/editar/{id}(id=${cuenta.id})}" title="Editar">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a class="btn btn-danger btn-sm"
+                   th:href="@{/cuentas/eliminar/{id}(id=${cuenta.id})}"
+                   onclick="return confirm('¿Estás seguro de que deseas eliminar esta cuenta?');" title="Eliminar">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Banco del Pacífico. Todos los derechos reservados.</p>
+    <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

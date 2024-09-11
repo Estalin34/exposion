@@ -1,0 +1,413 @@
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bb5;
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #007bb5 !important;
+        }
+        .hero-section {
+            background: url('https://www.bancodelpacifico.com/BancoPacifico/media/headers/header-sec-servicios.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            position: relative;
+            z-index: 2;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            border-radius: 10px 10px 0 0;
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #007bb5;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+        .contact-info, .vision-mission-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .contact-info h2, .vision-mission-info h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .contact-info p, .vision-mission-info p {
+            margin-bottom: 10px;
+        }
+        .contact-info iframe {
+            border: 0;
+            border-radius: 10px;
+        }
+        .vision-mission-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .vision-mission-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .vision-mission-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .accordion-button::after {
+            content: none;
+        }
+        .video-card {
+            margin-bottom: 20px;
+        }
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Asegura que la imagen se cubra sin distorsionar */
+}
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Asegura que la imagen se cubra sin distorsionar */
+}
+
+.gallery-item {
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay p {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    .blog-card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .overlay-blog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .blog-card:hover .overlay-blog {
+            opacity: 1;
+        }
+
+        .overlay-blog .btn {
+            background-color: rgba(255, 255, 255, 0.85);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: background-color 0.2s;
+        }
+
+        .overlay-blog .btn:hover {
+            background-color: #f8f9fa;
+        }
+
+        .card-body h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-body p {
+            color: #6c757d;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+         .testimonial-card {
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .testimonial-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .overlay-testimonial {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .testimonial-card:hover .overlay-testimonial {
+                opacity: 1;
+            }
+
+            .overlay-testimonial .btn {
+                background-color: rgba(255, 255, 255, 0.85);
+                font-weight: bold;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                transition: background-color 0.2s;
+            }
+
+            .overlay-testimonial .btn:hover {
+                background-color: #f8f9fa;
+            }
+
+            .card-body h5 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .card-body p {
+                color: #6c757d;
+            }
+
+            .card-img-top {
+                height: 200px;
+                object-fit: cover;
+            }
+            /* Añade este código a tu archivo CSS o dentro de una etiqueta <style> en el <head> del HTML */
+
+            .info-section {
+                background-color: #f8f9fa; /* Color de fondo suave */
+            }
+
+            .feature-box {
+                border: 1px solid #e1e5ea; /* Borde ligero alrededor de las características */
+            }
+
+            .feature-box i {
+                font-size: 1.25rem; /* Tamaño del icono */
+                color: #007bff; /* Color del icono */
+            }
+
+            .btn-primary {
+                background-color: #007bff; /* Color del botón */
+                border-color: #007bff; /* Color del borde del botón */
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Color del botón en hover */
+                border-color: #004085; /* Color del borde del botón en hover */
+            }
+
+            .form-control {
+                border: 1px solid #ced4da; /* Borde de los campos del formulario */
+                border-radius: 0.375rem; /* Bordes redondeados */
+                padding: 0.75rem 1rem; /* Espaciado interno */
+            }
+
+            .form-label {
+                color: #495057; /* Color del texto de la etiqueta del formulario */
+            }
+
+            .card-body {
+                padding: 1.25rem; /* Espaciado interno de las tarjetas */
+            }
+
+            .card-img-top {
+                border-bottom-left-radius: 0.375rem; /* Bordes redondeados en la parte inferior */
+                border-bottom-right-radius: 0.375rem; /* Bordes redondeados en la parte inferior */
+            }
+
+            .text-gray-700 {
+                color: #6c757d; /* Color del texto en gris oscuro */
+            }
+
+            .text-gray-800 {
+                color: #343a40; /* Color del texto en gris más oscuro */
+            }
+
+            .text-gray-600 {
+                color: #6c757d; /* Color del texto en gris medio */
+            }
+
+            .bg-light {
+                background-color: #f8f9fa; /* Fondo ligero */
+            }
+
+            .shadow-md {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra mediana */
+            }
+
+            .rounded {
+                border-radius: 0.375rem; /* Bordes redondeados */
+            }
+
+            .rounded-top {
+                border-top-left-radius: 0.375rem; /* Bordes redondeados en la parte superior */
+                border-top-right-radius: 0.375rem; /* Bordes redondeados en la parte superior */
+            }
+
+            .mb-4, .mb-6, .mb-8 {
+                margin-bottom: 1.5rem; /* Margen inferior estándar */
+            }
+
+            .text-center {
+                text-align: center; /* Alineación de texto al centro */
+            }
+            .info-button {
+                font-weight: 500;
+                padding: 10px 20px;  /* Ajuste de relleno para que el botón sea más grande */
+                border-radius: 8px;  /* Bordes redondeados */
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+            .info-button i {
+                margin-right: 8px; /* Espacio entre el icono y el texto */
+                font-size: 1.2em;  /* Tamaño del ícono */
+            }
+
+            .info-button:hover {
+                background-color: #0056b3; /* Cambio de color de fondo al hacer hover */
+                transform: scale(1.05); /* Efecto de agrandamiento */
+            }
+             #vision-mision {
+                    background-color: #f9f9f9;
+                    padding-top: 60px;
+                    padding-bottom: 60px;
+                }
+                #vision-mision h2 {
+                    font-size: 2.5rem;
+                    color: #333;
+                    letter-spacing: 0.5px;
+                    text-transform: uppercase;
+                }
+                .card {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                .card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+                }
+                .card-title {
+                    font-size: 1.75rem;
+                    color: #007bff;
+                }
+                .card-text {
+                    font-size: 1rem;
+                    color: #6c757d;
+                }
+                .flip-card {
+                        perspective: 1000px;
+                    }
+                    .flip-card-inner {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        transition: transform 0.8s;
+                        transform-style: preserve-3d;
+                    }
+                    .flip-card-front, .flip-card-back {
+                        position: absolute;
+                        width: 100%;
+                        backface-visibility: hidden;
+                    }
+                    .flip-card-front {
+                        z-index: 2;
+                    }
+                    .flip-card-back {
+                        transform: rotateY(180deg);
+                    }
+                    .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner {
+                        transform: rotateY(180deg);
+                    }
+

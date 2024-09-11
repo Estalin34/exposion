@@ -1,0 +1,68 @@
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 4px solid #007BFF;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #007BFF, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #0056b3, #003d7a);
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: scale(1.05);
+        }
+        .alert {
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .form-control:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+        .form-label {
+            font-weight: bold;
+        }

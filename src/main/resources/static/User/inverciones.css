@@ -1,0 +1,361 @@
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #005daa,#007bb5);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-brand {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .invest-section, .stats-section, .testimonials-section, .news-section {
+            padding: 60px 0;
+        }
+        .invest-section h2, .stats-section h2, .testimonials-section h2, .news-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #003d7a;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .invest-card, .stats-card, .testimonial-card, .news-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+        }
+        .invest-card:hover, .stats-card:hover, .testimonial-card:hover, .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+        .invest-card img, .testimonial-card img {
+            width: 100%; /* Imágenes del mismo ancho */
+            height: 200px; /* Altura fija para todas las imágenes */
+            object-fit: cover; /* Asegura que las imágenes cubran el área sin deformarse */
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd; /* Línea divisoria entre imagen y contenido */
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .invest-card img:hover, .testimonial-card img:hover {
+            transform: scale(1.05);
+        }
+        .invest-card h3, .stats-card h3, .testimonial-card h3, .news-card h3 {
+            font-weight: bold;
+            font-size: 24px;
+            color: #003d7a;
+        }
+        .invest-card p, .stats-card p, .testimonial-card p, .news-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .invest-card .btn, .testimonial-card .btn {
+            background-color: #003d7a;
+            color: #fff;
+            border-radius: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .invest-card .btn:hover, .testimonial-card .btn:hover {
+            background-color: #002d5a;
+        }
+        .stats-card {
+            text-align: center;
+        }
+        .stats-card h3 {
+            font-size: 28px;
+        }
+        .stats-card p {
+            font-size: 22px;
+        }
+        .testimonial-card img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin: 0 auto 15px;
+        }
+        .testimonial-card {
+            text-align: center;
+        }
+        .testimonial-card h3 {
+            font-size: 20px;
+        }
+        .testimonial-card p {
+            font-size: 16px;
+            font-style: italic;
+            color: #777;
+        }
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .news-card h3 {
+            font-size: 20px;
+        }
+        .news-card p {
+            font-size: 14px;
+        }
+        .footer {
+            background-color: #007bb5;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+        .footer .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #cccccc;
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            .invest-section h2, .stats-section h2, .testimonials-section h2, .news-section h2 {
+                font-size: 30px;
+            }
+            .invest-card, .stats-card, .testimonial-card, .news-card {
+                padding: 15px;
+            }
+            .invest-card h3, .stats-card h3, .testimonial-card h3, .news-card h3 {
+                font-size: 20px;
+            }
+            .invest-card .btn, .testimonial-card .btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+        //df/
+        .invest-section {
+            background-color: #f5f5f5;
+            padding: 3rem 0; /* Espaciado superior e inferior */
+        }
+
+        .invest-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem; /* Bordes ligeramente redondeados para un look más moderno */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #ffffff; /* Fondo blanco para el contenido de la tarjeta */
+        }
+
+        .invest-card img {
+            width: 100%;
+            height: 250px; /* Altura mayor para una imagen más prominente */
+            object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsión */
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: #6c757d;
+            margin: 0;
+        }
+
+        .invest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+.testimonials-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0; /* Espaciado superior e inferior para mayor separación */
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem; /* Espaciado inferior para separar del contenido */
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem; /* Bordes redondeados más prominentes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-card img {
+    border-radius: 50%;
+    width: 100px; /* Tamaño fijo para las imágenes de los clientes */
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem; /* Espaciado entre la imagen y el texto */
+}
+
+.testimonial-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.news-section {
+    background-color: #f4f4f4;
+    padding: 4rem 0; /* Espaciado superior e inferior para mayor separación */
+    text-align: center;
+}
+
+.news-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem; /* Espaciado inferior para separar del contenido */
+}
+
+.news-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem; /* Bordes redondeados más prominentes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.news-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.news-card p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.news-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.contact-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #343a40;
+}
+
+.contact-form .form-label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.contact-form .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+    outline: none;
+}
+
+.contact-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .text-center {
+    text-align: center;
+}

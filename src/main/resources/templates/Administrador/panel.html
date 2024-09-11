@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+       <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .sidebar a {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .sidebar a:hover {
+            background-color: #2b2d42;
+            color: #edf2f4;
+        }
+        .notification {
+            border-color: #ffbe0b;
+        }
+        .notification p {
+            color: #ff6f00;
+        }
+        #notificationPopup {
+            display: none; /* Cambia a block si deseas que sea visible por defecto */
+        }
+        #sessionTimer {
+            display: none; /* Cambia a block si deseas que sea visible por defecto */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Top Navbar -->
+<div class="bg-[#007bb5] text-white p-4 flex items-center justify-between">
+    <a href="/inicio" class="bg-[#007bb5] text-white px-4 py-2 rounded-lg">BBVA</a>
+    <div class="flex items-center">
+        <button class="text-white focus:outline-none" onclick="toggleSidebar()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        <h1 class="text-xl font-bold ml-4">Panel de Administración</h1>
+    </div>
+
+</div>
+
+<div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="bg-[#007bb5]  text-white w-64 p-6 md:w-80 lg:w-96 sidebar">
+        <img src="/imagenes/logo.png" alt="Logo" class="w-16 h-16 mb-6 mx-auto">
+
+        <h2 class="text-3xl font-bold mb-6">Panel de Admin</h2>
+        <nav>
+            <a href="/clientes" class="block py-3 px-4 mb-2 rounded-lg transition">Usuarios</a>
+            <a href="/cuentas" class="block py-3 px-4 mb-2 rounded-lg transition">Cuentas Bancarias</a>
+            <a href="/transacciones" class="block py-3 px-4 mb-2 rounded-lg transition">Transacciones</a>
+            <a href="/prestamos" class="block py-3 px-4 mb-2 rounded-lg transition">Préstamos</a>
+            <a href="/garantias" class="block py-3 px-4 mb-2 rounded-lg transition">Garantías</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6 md:p-10 text-gray-700">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">Bienvenido, Administrador</h2>
+                <div class="text-sm text-gray-500">Último acceso: 14/08/2024</div>
+            </div>
+            <p class="mb-6">Aquí puedes gestionar todas las operaciones del banco.</p>
+
+            <!-- Notifications -->
+            <div id="notificationPopup" class="fixed bottom-4 right-4 bg-yellow-500 text-white p-4 rounded-lg shadow-lg">
+                <p>Este es un mensaje de notificación importante.</p>
+                <button onclick="closeNotification()" class="absolute top-2 right-2 text-white">✕</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div class="bg-green-100 p-6 rounded-lg shadow-lg flex items-center">
+                    <svg class="w-12 h-12 text-green-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3.5 10.5a1 1 0 011-1h12a1 1 0 011 1v1a1 1 0 01-1 1h-12a1 1 0 01-1-1v-1z"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-semibold">Usuarios Registrados</h3>
+                        <p class="text-2xl font-bold">150</p>
+                    </div>
+                </div>
+                <div class="bg-blue-100 p-6 rounded-lg shadow-lg flex items-center">
+                    <svg class="w-12 h-12 text-blue-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M12 14h6v-2h-6v2zm-8 0h6v-2H4v2zm8-4h6v-2h-6v2zm-8 0h6v-2H4v2zm8-4h6V4h-6v2zM4 4v2h6V4H4z"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-semibold">Cuentas Activas</h3>
+                        <p class="text-2xl font-bold">320</p>
+                    </div>
+                </div>
+                <div class="bg-red-100 p-6 rounded-lg shadow-lg flex items-center">
+                    <svg class="w-12 h-12 text-red-600 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 8h2v4h-2V8z"/><path d="M10 12h2v2h-2v-2z"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-semibold">Transacciones Hoy</h3>
+                        <p class="text-2xl font-bold">45</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Reporte de Usuarios</h3>
+                    <p class="text-gray-600">Detalles de los usuarios registrados, sus últimos inicios de sesión y más.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Tendencias de Préstamos</h3>
+                    <p class="text-gray-600">Gráficos y estadísticas sobre los préstamos solicitados y aprobados.</p>
+                </div>
+            </div>
+
+            <!-- Stats Chart -->
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4">Estadísticas Mensuales</h3>
+                <canvas id="statsChart"></canvas>
+            </div>
+
+            <!-- Floating Action Buttons -->
+            <div class="fixed bottom-6 right-6 flex flex-col items-center">
+                <button class="bg-blue-600 text-white p-4 rounded-full shadow-lg mb-4">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+                <button class="bg-green-600 text-white p-4 rounded-full shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Session Timer -->
+<div id="sessionTimer" class="fixed bottom-6 right-6 bg-yellow-300 text-gray-800 p-4 rounded-lg shadow-lg">
+    <p>Tiempo restante: <span id="time">5:00</span></p>
+    <button onclick="resetTimer()" class="mt-2 bg-yellow-500 text-white px-4 py-2 rounded-lg">Reiniciar Temporizador</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Variables para el temporizador
+    let timer;
+    let minutes = 5;
+    let seconds = 0;
+
+    function updateTimer() {
+        if (seconds === 0) {
+            if (minutes === 0) {
+                clearInterval(timer);
+                document.getElementById('sessionTimer').style.display = 'none';
+                alert('¡Tiempo de sesión expirado!');
+                return;
+            }
+            minutes--;
+            seconds = 59;
+        } else {
+            seconds--;
+        }
+        document.getElementById('time').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+
+    function startTimer() {
+        timer = setInterval(updateTimer, 1000);
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        minutes = 5;
+        seconds = 0;
+        document.getElementById('time').textContent = '5:00';
+        startTimer();
+    }
+
+    // Inicializar el temporizador al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('sessionTimer').style.display = 'block';
+        startTimer();
+    });
+
+    // Función para cerrar notificaciones
+    function closeNotification() {
+        document.getElementById('notificationPopup').style.display = 'none';
+    }
+
+    // Función para mostrar/ocultar el menú lateral
+    function toggleSidebar() {
+        document.querySelector('.sidebar').classList.toggle('hidden');
+    }
+
+    // Gráfico de estadísticas
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+            datasets: [{
+                label: 'Transacciones',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
