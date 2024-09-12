@@ -98,6 +98,16 @@
     <p>&copy; 2024 Banco del Pacífico. Todos los derechos reservados.</p>
     <p><a href="#" style="color: white; text-decoration: none;">Política de Privacidad</a> | <a href="#" style="color: white; text-decoration: none;">Términos de Servicio</a></p>
 </footer>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+    var cedula = document.getElementById('cedula').value;
+    if (cedula.length !== 10) { // Ejemplo de validación de cédula
+        alert('La cédula debe tener 10 dígitos.');
+        event.preventDefault(); // Evita que el formulario se envíe
+    }
+});
+
+</script>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
