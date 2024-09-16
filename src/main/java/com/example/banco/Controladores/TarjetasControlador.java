@@ -11,4 +11,5 @@ public class TarjetasControlador {
         return "Banco/tarjetas"; // Asegúrate de que la página esté en "src/main/resources/templates/Banco/tarjetas.html"
     }
 
+
 }

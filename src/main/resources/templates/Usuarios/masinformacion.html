@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco BBVA - Funcionalidades y Pagos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1200px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #004aad;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .countries {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .countries div {
+            background-color: #eef;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Banco BBVA - Funcionalidades y Pagos</h1>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Funcionalidades del Banco</h2>
+        <ul>
+            <li>Consulta de saldo en tiempo real</li>
+            <li>Transferencias entre cuentas nacionales e internacionales</li>
+            <li>Pago de servicios públicos (agua, electricidad, etc.)</li>
+            <li>Gestión de inversiones y ahorro</li>
+            <li>Atención al cliente 24/7 a través de la aplicación móvil</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Pagos que Puedes Realizar</h2>
+        <ul>
+            <li>Pago de tarjetas de crédito</li>
+            <li>Pago de servicios (agua, luz, internet)</li>
+            <li>Recargas de telefonía móvil</li>
+            <li>Pagos de impuestos locales y nacionales</li>
+            <li>Donaciones a ONGs y causas benéficas</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Países donde Puedes Utilizar Nuestros Servicios</h2>
+        <div class="countries">
+            <div>
+                <h3>Ecuador</h3>
+                <p>Pagos de servicios, transferencias y retiros en cajeros BBVA.</p>
+            </div>
+            <div>
+                <h3>España</h3>
+                <p>Acceso a todos los servicios bancarios, incluidas transferencias internacionales.</p>
+            </div>
+            <div>
+                <h3>México</h3>
+                <p>Pagos y transferencias, además de la gestión de inversiones y créditos.</p>
+            </div>
+            <div>
+                <h3>Colombia</h3>
+                <p>Operaciones bancarias completas y atención al cliente en línea 24/7.</p>
+            </div>
+            <div>
+                <h3>Perú</h3>
+                <p>Pagos, transferencias y retiros en red de cajeros afiliados a BBVA.</p>
+            </div>
+            <div>
+                <h3>Argentina</h3>
+                <p>Acceso completo a los servicios de BBVA, incluidos préstamos y ahorro.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Banco BBVA. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

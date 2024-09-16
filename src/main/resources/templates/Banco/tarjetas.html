@@ -47,17 +47,8 @@
 <header class="bg-gradient-blue text-white p-4 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
         <div class="flex items-center space-x-3">
-            
             <a href="/inicio" class="text-xl font-semibold">BBVA</a>
         </div>
-        <nav>
-            <ul class="flex space-x-6 text-lg">
-                <li><a href="#" class="hover-underline-animation" aria-label="Ir a Inicio">Inicio</a></li>
-                <li><a href="#" class="hover-underline-animation" aria-label="Ir a Servicios">Servicios</a></li>
-                <li><a href="#" class="hover-underline-animation" aria-label="Ir a Tarjetas">Tarjetas</a></li>
-                <li><a href="#" class="hover-underline-animation" aria-label="Ir a Contacto">Contacto</a></li>
-            </ul>
-        </nav>
     </div>
 </header>
 
@@ -81,7 +72,7 @@
                     <li>Acceso a promociones y descuentos exclusivos.</li>
                 </ul>
                 <div class="text-center">
-                    <a href="#" class="text-blue-600 hover:underline font-semibold hover:text-blue-800 transition duration-300" aria-label="Solicitar Tarjeta de Crédito BBVA">Solicitar ahora</a>
+                    <button onclick="openModal('credito')" class="text-blue-600 hover:underline font-semibold hover:text-blue-800 transition duration-300">Más información</button>
                 </div>
             </article>
 
@@ -98,7 +89,7 @@
                     <li>Consulta de saldo en tiempo real.</li>
                 </ul>
                 <div class="text-center">
-                    <a href="#" class="text-blue-600 hover:underline font-semibold hover:text-blue-800 transition duration-300" aria-label="Solicitar Tarjeta de Débito BBVA">Solicitar ahora</a>
+                    <button onclick="openModal('debito')" class="text-blue-600 hover:underline font-semibold hover:text-blue-800 transition duration-300">Más información</button>
                 </div>
             </article>
         </div>
@@ -116,6 +107,37 @@
     </section>
 </main>
 
+<!-- Modal para más información -->
+<div id="modal-credito" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white rounded-lg p-8 w-96">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">Detalles de la Tarjeta de Crédito BBVA</h3>
+        <p class="text-gray-600 mb-4">
+            Nuestra tarjeta de crédito BBVA te ofrece un límite de crédito flexible, la acumulación de puntos por compras y acceso a promociones exclusivas.
+        </p>
+        <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+            <li>Programa de recompensas por cada compra.</li>
+            <li>Acceso a seguros de viaje y asistencia médica.</li>
+            <li>Control de tus gastos desde la app BBVA.</li>
+        </ul>
+        <button onclick="closeModal('credito')" class="text-white bg-blue-600 hover:bg-blue-800 rounded-md px-4 py-2">Cerrar</button>
+    </div>
+</div>
+
+<div id="modal-debito" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white rounded-lg p-8 w-96">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">Detalles de la Tarjeta de Débito BBVA</h3>
+        <p class="text-gray-600 mb-4">
+            Con nuestra tarjeta de débito BBVA puedes acceder a cajeros automáticos 24/7, realizar pagos seguros en línea y consultar tu saldo en tiempo real.
+        </p>
+        <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+            <li>Pagos seguros en línea y en tiendas.</li>
+            <li>Acceso a promociones exclusivas.</li>
+            <li>Controla tu tarjeta desde la app BBVA.</li>
+        </ul>
+        <button onclick="closeModal('debito')" class="text-white bg-blue-600 hover:bg-blue-800 rounded-md px-4 py-2">Cerrar</button>
+    </div>
+</div>
+
 <!-- Footer -->
 <footer class="bg-gradient-blue text-white p-6 mt-12">
     <div class="container mx-auto text-center">
@@ -131,12 +153,19 @@
             </a>
         </div>
         <p>© 2024 Banco BBVA. Todos los derechos reservados.</p>
-        <p>Dirección: Av. Principal 123, Ciudad - Teléfono: 123-456-7890</p>
+        <p>Dirección: Av. Principal, Quito, Ecuador. Teléfono: +593 123 4567</p>
     </div>
 </footer>
 
-<!-- FontAwesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Script para manejar los modales -->
+<script>
+    function openModal(tipo) {
+        document.getElementById(`modal-${tipo}`).classList.remove('hidden');
+    }
+    function closeModal(tipo) {
+        document.getElementById(`modal-${tipo}`).classList.add('hidden');
+    }
+</script>
 
 </body>
 </html>

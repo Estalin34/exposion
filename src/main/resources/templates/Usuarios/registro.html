@@ -43,6 +43,18 @@
         <a href="/login" class="text-blue-500 hover:text-blue-700">¿Ya tienes una cuenta? Inicia sesión</a>
     </div>
 </div>
+<script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            e.preventDefault(); // Evita que el formulario se envíe
+            alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
+        }
+    });
+</script>
+
 
 </body>
 </html>

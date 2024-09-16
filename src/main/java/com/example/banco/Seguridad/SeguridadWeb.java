@@ -48,10 +48,10 @@ public class SeguridadWeb {
                 .logout(logout ->
                         logout
                                 .logoutUrl("/logout")
-                                .logoutSuccessUrl("/login?logout")
+                                .logoutSuccessUrl("/prestamos/masinformacion")
                                 .permitAll()
                 )
-                .csrf(csrf -> csrf.disable()); // Recomendación: Habilitar CSRF en producción si no hay razones específicas para desactivarlo
+                .csrf(csrf -> csrf.ignoringRequestMatchers("/api/**"));  // Desactivar CSRF solo para rutas API si es necesario
 
         return http.build();
     }
